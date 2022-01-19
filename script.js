@@ -73,3 +73,57 @@ const handleClick = async () => {
     window.alert("Cannot leave fields empty");
   }
 };
+const checkValidity = () => {
+  let password = document.getElementById("passwordInput").value;
+  let confirmPassword = document.getElementById("confirmPasswordInput").value;
+  let email = document.getElementById("email").value;
+  let name = document.getElementById("name").value;
+
+  const valid = [];
+  const invalid = [];
+
+  eightCharactersRegex.test(password)
+    ? valid.push(document.getElementById("lengthRequirement"))
+    : invalid.push(document.getElementById("lengthRequirement"));
+
+  password && password === confirmPassword
+    ? valid.push(document.getElementById("passwordsMatchRequirement"))
+    : invalid.push(document.getElementById("passwordsMatchRequirement"));
+
+  email && email.includes("@") !== ""
+    ? valid.push(document.getElementById("email"))
+    : invalid.push(document.getElementById("email"));
+
+  name.length >= 10 && name !== ""
+    ? valid.push(document.getElementById("name"))
+    : invalid.push(document.getElementById("name"));
+
+  StateDown.value && StateDown.value !== ""
+    ? valid.push(document.getElementById("StateDropdown"))
+    : invalid.push(document.getElementById("StateDropdown"));
+
+  OccuDropdown.value && OccuDropdown.value !== ""
+    ? valid.push(document.getElementById("OccupationDropdown"))
+    : invalid.push(document.getElementById("OccupationDropdown"));
+
+  valid.forEach(el => {
+    el.classList.remove("invalid");
+    el.classList.add("valid");
+  });
+  invalid.forEach(el => {
+    el.classList.remove("valid");
+    el.classList.add("invalid");
+  });
+  console.log(valid);
+  if (valid.length === 6) document.getElementById("submitBtn").disabled = false;
+  else document.getElementById("submitBtn").disabled = true;
+};
+
+Array.from(document.getElementsByClassName("input-listener")).forEach(input => {
+  input.addEventListener("keyup", checkValidity);
+});
+Array.from(document.getElementsByClassName("select-listener")).forEach(
+  input => {
+    input.addEventListener("change", checkValidity);
+  }
+);
