@@ -19,3 +19,41 @@
 
   <link rel="stylesheet" href="./style.css">
 </head>
+<style>
+    body {
+      background-image: url(images/fetch.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  </style>
+  <body>
+  
+    <div class="form-container">
+      <h1>Sign Up</h1>
+  
+      <div class="password-requirements">
+        <h5 class="requirements-header">Password Requirements:</h5>
+  
+        <div id="lengthRequirement" class="requirement">
+          <div class="fulfilled-symbol"></div>
+          Contains at least 8 characters
+  
+        <div id="passwordsMatchRequirement" class="requirement">
+          <div class="fulfilled-symbol"></div>
+          Passwords must match
+        </div>
+      </div>
+      <form class="text-center p-5">
+        <input required type="name" id="name" class="form-control mb-4 input-listener" placeholder="Enter Your Full Name" minLength="10">
+        <input required type="email" id="email" class="form-control mb-4 input-listener" placeholder="Enter Your Email">
+        <input required type="password" id="passwordInput" class="form-control mb-4 input-listener" placeholder="Enter Your Password">
+        <input required type="password" id="confirmPasswordInput" class="form-control mb-4 input-listener" placeholder="Confirm Your Password">
+        <select id="OccupationDropdown" placeholder='Occupation' label=''class="form-control mb-4 select-listener"><option value="" selected disabled hidden>Select Your Occupation</option></select>
+        <select id="StateDropdown" placeholder='State' label=''class="form-control mb-4 select-listener"><option value="" selected disabled hidden>Select Your State</option></select>
+        <button class="btn btn-info btn-block my-4" id="submitBtn" onclick="handleClick();return false;" >Submit</button>
+      </form>
+      
+      <script src="./script.js"></script>
+    </div>
+    </body>
+  </html>
