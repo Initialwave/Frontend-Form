@@ -31,3 +31,45 @@ const displayOption = async () => {
     StateDown.appendChild(oldOption);
   }
 };
+displayOption();
+
+const handleClick = async () => {
+  let email = document.getElementById("email").value;
+  let name = document.getElementById("name").value;
+  let password = document.getElementById("confirmPasswordInput").value;
+  let occupation = document.getElementById("OccupationDropdown").value;
+  let state = document.getElementById("StateDropdown").value;
+  // console.log("it Fired");
+  // console.log(handleClick);
+  await checkValidity("");
+  if (
+    email !== "" &&
+    name !== "" &&
+    password !== "" &&
+    occupation !== "" &&
+    state !== ""
+  ) {
+    await fetch("https://frontend-take-home.fetchrewards.com/form", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: password,
+        occupation: occupation,
+        state: state,
+      }),
+    })
+      .then(res => {
+        window.alert("successfully posted");
+      })
+      .catch(() => {
+        window.alert("failed to Create Form");
+      });
+  } else {
+    window.alert("Cannot leave fields empty");
+  }
+};
