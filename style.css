@@ -1,49 +1,50 @@
 .form-container {
-    background-image: linear-gradient(
-      rgba(0, 0, 255, 0.404),
-      rgba(0, 0, 255, 0.301),
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0)
-    );
-    width: 650px;
-    margin: auto;
-    box-shadow: 2px 5px 10px;
-    margin-top: 50px;
-    border-radius: 10px 10px 10px 10px;
-  }
-  .form-container h1 {
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.555);
-    border-radius: 10px 10px 0px 0px;
-  }
-  .password-requirements {
-    width: 450px;
-    margin: auto;
-    margin-top: 25px;
-  }
-  .valid-symbol {
-    display: inline;
-  }
-  .valid-symbol:after {
-    content: "X";
-  }
-  #lengthRequirement {
-    background-color: rgba(255, 255, 255, 0.705);
-    border: 1px solid rgba(128, 128, 128, 0.363);
-    border-radius: 10px;
-  }
-  .requirement {
-    color: orangered;
-    font-size: 20px;
-    font-weight: 700;
-  }
-  .valid {
-    color: green;
-  }
-  .valid .valid-symbol:after {
-    content: "\2713";
-  }
-  #submitBtn:disabled {
-    cursor: not-allowed;
-  }
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.317),
+    rgba(255, 255, 255, 0.236),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5),
+    rgba(6, 6, 121, 0.404)
+  );
+  width: 650px;
+  margin: auto;
+  box-shadow: 2px 5px 10px;
+  margin-top: 50px;
+  border-radius: 10px 10px 10px 10px;
+}
+.form-container h1 {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.555);
+  border-radius: 10px 10px 0px 0px;
+}
+.password-requirements {
+  width: 450px;
+  margin: auto;
+  margin-top: 25px;
+  color: aqua;
+}
+.valid-symbol {
+  display: inline;
+}
+.valid-symbol:after {
+  content: "X";
+}
+#lengthRequirement {
+  background-color: rgba(255, 255, 255, 0.705);
+  border: 1px solid rgba(128, 128, 128, 0.363);
+  border-radius: 10px;
+}
+.requirement {
+  color: orangered;
+  font-size: 20px;
+  font-weight: 700;
+}
+.valid {
+  color: green;
+}
+.valid .valid-symbol:after {
+  content: "\2713";
+}
+#submitBtn:disabled {
+  cursor: not-allowed;
+}
