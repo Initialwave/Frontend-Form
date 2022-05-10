@@ -7,7 +7,7 @@ const OccuDropdown = document.getElementById("OccupationDropdown");
 // console.log({ OccuDropdown });
 const getPost = async () => {
   const response = await fetch(
-    "https://frontend-take-home.fetchrewards.com/form"
+    "https://initialwave.pythonanywhere.com/combined"
   );
   const data = await response.json();
   // console.log({ data });
@@ -16,13 +16,13 @@ const getPost = async () => {
 
 const displayOption = async () => {
   const options = await getPost();
-  for (option of options.occupations) {
+  for (option of options.Occupations) {
     const newOption = document.createElement("option");
     newOption.value = option;
     newOption.text = option;
     OccuDropdown.appendChild(newOption);
   }
-  for (option of options.states) {
+  for (option of options.States) {
     let oldOption = document.createElement("option");
     // console.log(option);
     oldOption = document.createElement("option");
